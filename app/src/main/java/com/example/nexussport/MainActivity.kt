@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
             NexusSportTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Roman",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -35,20 +36,23 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "О прыэт!",
-        modifier = modifier
-    )
-    Image(
-        painter = painterResource(id = R.drawable.before_after),
-        contentDescription = "До после"
-    )
-    Icon(
-        painter = painterResource(id = R.drawable.nexus_sport),
-        contentDescription = "sport",
-        tint = androidx.compose.ui.graphics.Color.Unspecified
-    )
+    Column(modifier = modifier) {
+        Text(
+            text = "О прыэт! $name",
+            modifier = modifier
+        )
+        Image(
+            painter = painterResource(id = R.drawable.before_after),
+            contentDescription = "До после"
+        )
+        Icon(
+            painter = painterResource(id = R.drawable.nexus_sport),
+            contentDescription = "sport",
+            tint = androidx.compose.ui.graphics.Color.Unspecified
 
+        )
+
+    }
 }
 
 @Preview(showBackground = true)
